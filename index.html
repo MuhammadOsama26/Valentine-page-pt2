@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>To My Valentine</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: Georgia, serif;
+}
+
+/* Floating hearts */
+.heart {
+    position: absolute;
+    font-size: 20px;
+    animation: floatUp linear infinite;
+    opacity: 0;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(100vh) scale(0.6); opacity: 0; }
+    15% { opacity: 1; }
+    100% { transform: translateY(-10vh) scale(1.3); opacity: 0; }
+}
+
+/* Book container */
+.book {
+    width: 360px;
+    height: 520px;
+    position: relative;
+    perspective: 2000px;
+    z-index: 10;
+}
+
+/* Cover */
+.cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, #9b1c3c, #6e0f2b);
+    border-radius: 12px;
+    transform-origin: left;
+    transition: transform 1.6s ease;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 3;
+}
+
+.cover::before {
+    content: "♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥";
+    position: absolute;
+    top: 20%;
+    left: -20%;
+    width: 150%;
+    font-size: 24px;
+    color: rgba(255,255,255,0.07);
+    transform: rotate(-25deg);
+    line-height: 45px;
+}
+
+.cover-content {
+    position: absolute;
+    width: 100%;
+    top: 40%;
+    text-align: center;
+    color: #f8e7b6;
+}
+
+.cover-content h1 {
+    margin: 0;
+    font-family: 'Great Vibes', cursive;
+    font-size: 42px; 
+    letter-spacing: 2px;
+}
+
+.cover-content p {
+    margin-top: 15px;
+    font-style: italic;
+    font-size: 12px; 
+    letter-spacing: 1px;
+}
+
+/* Pages */
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    padding: 40px 35px;
+    box-sizing: border-box;
+    transform-origin: left;
+    transition: transform 1.6s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.page1 { background: linear-gradient(to bottom right, #fff5e6, #ffe6e6); box-shadow: inset 0 0 40px rgba(0,0,0,0.08); }
+.page2 { background: linear-gradient(to bottom right, #fff0f5, #ffe6f0); box-shadow: inset 0 0 40px rgba(0,0,0,0.08); z-index: 0; }
+
+/* Flip animations */
+.book.open .cover { transform: rotateY(-180deg); z-index: 1; }
+.book.page1-flipped .page1 { transform: rotateY(-180deg); z-index: 2; }
+
+/* Poem and letter content */
+.page-content {
+    text-align: center;
+    color: #4a2f2f;
+    line-height: 1.5;
+    font-size: 12px;
+    font-style: italic;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.page-content.auto-fit { display: flex; flex-direction: column; justify-content: center; }
+
+</style>
+</head>
+
+<body>
+
+<div class="book" id="book">
+
+    <!-- Page 2 -->
+    <div class="page page2">
+        <div class="page-content auto-fit" id="letter">
+My love, my heartbeat, my everything. Without you, the world would taste like nothing, like a sky without stars, like music without melody, like coffee with no warmth, like a poem with no words. You are the reason my mornings are golden, the reason my nights feel like soft whispers of peace. You are the pulse in my veins, the warmth that melts the coldest corners of my soul. I never believed a person could make another feel so complete, so seen, so understood, until you. You’ve painted colors in my life that I didn’t even know existed. Every smile of yours is a sunrise, every laugh a symphony, every touch a home I want to live in forever. The moon asks me why I don’t look at him, and I tell him, my whole universe is already in your eyes. If I could gather every star, every drop of ocean, every breeze that dances through the world, it still wouldn’t compare to the way you make me feel. You are my compass when I am lost, my anchor when life is stormy, my wings when I dream. And I promise, as long as I breathe, you will be the only one I love, the only one I cherish, the only one I would choose, over and over, in every lifetime. Because you are my life, my home, my heart, my universe, and nothing, nothing, could ever replace you. <br>
+<b>I love you, today, tomorrow, and forever.</b>
+        </div>
+    </div>
+
+    <!-- Page 1 -->
+    <div class="page page1">
+        <div class="page-content auto-fit" id="poem">
+Today's the day called Valentine’s,  <br>
+Yet your heart has long been mine.  <br>
+Not just a valentine, it’s true,  <br>
+Forever I am bound to you.  <br>
+<br>
+You’re my peace when the world is loud,  <br>
+The one who makes me deeply proud.  <br>
+You’re the one I can’t stop dreaming about,  <br>
+The one I want to give my all without doubt.  <br>
+<br>
+You’re the one I love the most in the world,  <br>
+The one who makes my every moment twirled.  <br>
+Even the moon asks why I don’t look his way,  <br>
+I tell him my whole galaxy is you every day.  <br>
+<br>
+You’re the heartbeat that makes my soul sing,  <br>
+The joy, the laughter, the reason for everything.  <br>
+Not just for today, not just for a while,  <br>
+Forever, my love, I’ll be lost in your smile.<br>
+<br>
+        </div>
+    </div>
+
+    <!-- Front Cover -->
+    <div class="cover">
+        <div class="cover-content">
+            <h1>To My Valentine</h1>
+            <p>Written with all my heart</p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+const book = document.getElementById("book");
+
+/* Music */
+let musicStarted = false;
+const music = new Audio("OSO instrumental.mp3");
+music.loop = true;
+
+function playMusicOnce() {
+    if (!musicStarted) {
+        music.play();
+        musicStarted = true;
+    }
+}
+
+/* Flip book */
+book.querySelector(".cover").addEventListener("click", () => {
+    book.classList.toggle("open");
+    playMusicOnce();
+});
+
+book.querySelector(".page1").addEventListener("click", () => {
+    book.classList.toggle("page1-flipped");
+});
+
+/* Floating hearts */
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "♥";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (18 + Math.random() * 30) + "px";
+    heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+    heart.style.color = Math.random() > 0.5 ? "red" : "pink";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 7000);
+}
+for (let i = 0; i < 25; i++) createHeart();
+setInterval(createHeart, 120);
+
+/* Auto-fit text */
+function fitText(id) {
+    const container = document.getElementById(id);
+    let fontSize = 14;
+    while(container.scrollHeight > container.clientHeight && fontSize > 8) {
+        fontSize -= 0.5;
+        container.style.fontSize = fontSize + "px";
+    }
+}
+window.onload = () => { fitText("poem"); fitText("letter"); };
+window.onresize = () => { fitText("poem"); fitText("letter"); };
+</script>
+
+</body>
+</html>
